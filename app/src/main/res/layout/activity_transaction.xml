@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mobilecomputingprogram.piggydank.TransactionActivity">
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="current money amoutn program this"
+        android:layout_centerInParent="true"
+        />
+    <ImageView
+        android:id="@+id/penny_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/penny"
+        android:layout_marginTop="@dimen/btn_outer_margin"
+        />
+
+
+    <ImageView
+        android:id="@+id/nickle_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/nickle"
+        android:layout_toRightOf="@id/penny_img"
+        android:layout_marginTop="@dimen/btn_outer_margin"
+        />
+
+    <ImageView
+        android:id="@+id/dime_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/dime"
+        android:layout_toRightOf="@id/nickle_img"
+        android:layout_marginTop="@dimen/btn_outer_margin"
+        />
+
+    <ImageView
+        android:id="@+id/quarter_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/quarter"
+        android:layout_toRightOf="@id/dime_img"
+        android:layout_marginTop="@dimen/btn_outer_margin"
+        />
+
+    <ImageView
+        android:id="@+id/dollar_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/dollar"
+        android:layout_below="@id/penny_img"
+        />
+
+    <ImageView
+        android:id="@+id/five_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/fiver"
+        android:layout_below="@id/penny_img"
+        android:layout_toRightOf="@id/dollar_img"/>
+
+    <ImageView
+        android:id="@+id/ten_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/tenner"
+        android:layout_below="@id/penny_img"
+        android:layout_toRightOf="@id/five_img"
+        />
+
+    <ImageView
+        android:id="@+id/twenty_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/twenty"
+        android:layout_below="@id/penny_img"
+        android:layout_toRightOf="@id/ten_img"
+        />
+
+    <Button
+        android:id="@+id/undo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/undo"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/btn_outer_margin"
+        android:layout_marginLeft="@dimen/btn_outer_margin" />
+
+    <Button
+        android:id="@+id/withdraw_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/withdraw"
+        android:layout_alignTop="@id/undo_button"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/deposit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deposit"
+        android:layout_alignTop="@id/undo_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/btn_outer_margin"
+        />
+
+
+</RelativeLayout>

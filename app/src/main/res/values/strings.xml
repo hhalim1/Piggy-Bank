@@ -3,5 +3,6 @@
     <string name="withdraw">Withdraw</string>
     <string name="deposit">Deposit</string>
     <string name="undo">Undo</string>
+    <string name="go">Let's Go!</string>
 
 </resources>

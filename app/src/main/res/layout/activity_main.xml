@@ -30,18 +30,12 @@
         />
 
     <Button
-        android:id="@+id/deposit_btn"
+        android:id="@+id/go_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/pigimg"
-        android:layout_marginLeft="@dimen/btn_outer_margin"
-        android:text="@string/deposit" />
+        android:text="@string/go"
+        android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pigimg"
-        android:layout_marginRight="@dimen/btn_outer_margin"
-        android:layout_alignParentRight="true"
-        android:text="@string/withdraw"/>
+
 </RelativeLayout>
