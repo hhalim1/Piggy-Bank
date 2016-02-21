@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Piggy Bank</string>
+    <string name="app_name">Piggy-Bank</string>
     <string name="withdraw">Withdraw</string>
     <string name="deposit">Deposit</string>
     <string name="undo">Undo</string>
