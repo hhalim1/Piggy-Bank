@@ -10,13 +10,39 @@
     tools:context="com.example.mobilecomputingprogram.piggydank.TransactionActivity">
 
     <TextView
+        android:id="@+id/select_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="  +20.00"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:id="@+id/select_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="$100.00"
+        android:layout_alignBottom="@id/action"
+        android:layout_toLeftOf="@id/action"/>
+
+    <TextView
         android:id="@+id/cash_transaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="current money amoutn program this"
+        android:text="$1000.00"
         android:textSize="40sp"
-        android:layout_centerInParent="true"
+        android:layout_above="@id/select_transaction"
+        android:layout_alignRight="@id/select_transaction"
         />
+
     <ImageButton
         android:id="@+id/penny_img"
         android:layout_width="wrap_content"

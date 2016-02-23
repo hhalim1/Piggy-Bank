@@ -78,47 +78,54 @@ public class TransactionActivity extends AppCompatActivity {
     private final View.OnClickListener pListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            selection = PENNY;
+            actions.push(PENNY);
+            updateSelection(PENNY, false);
         }
     };
 
     private final View.OnClickListener nlistener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            selection = NICKEL;
+            actions.push(NICKEL);
+            updateSelection(NICKEL, false);
         }
     };
 
     private final View.OnClickListener dmlistener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            selection = DIME;
+            actions.push(DIME);
+            updateSelection(DIME, false);
         }
     };
 
     private final View.OnClickListener qlistener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            selection = QUART;
+            actions.push(QUART);
+            updateSelection(QUART, false);
         }
     };
 
     private final View.OnClickListener dlistener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            selection = DOLL;
+            actions.push(DOLL);
+            updateSelection(DOLL, false);
         }
     };
 
     private final View.OnClickListener fvlistener = new View.OnClickListener() {
         public void onClick(View v) {
-            selection = FIVE;
+            actions.push(FIVE);
+            updateSelection(FIVE, false);
         }
     };
 
     private final View.OnClickListener tenlistener = new View.OnClickListener() {
         public void onClick(View v) {
-            selection = TEN;
+            actions.push(TEN);
+            updateSelection(TEN, false);
             //print to screen dollars
         }
     };
@@ -126,10 +133,25 @@ public class TransactionActivity extends AppCompatActivity {
     private final View.OnClickListener twlistener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            selection = TWENT;
+            actions.push(TWENT);
+            updateSelection(TWENT, false);
             //print to screen dollars
         }
     };
+
+    private void updateSelection(double amount, boolean undid) {
+        selection += amount;
+        TextView selTrans = (TextView) findViewById(R.id.select_transaction);
+        selTrans.setText("$" + String.format("%.02f", selection));
+
+        TextView actTrans = (TextView) findViewById(R.id.action);
+        if (undid) {
+            actTrans.setText("-" + String.format("%02.02f", amount));
+        } else {
+            actTrans.setText("+" + String.format("%.02f", amount));
+        }
+
+    }
 
     private final View.OnClickListener wdListener = new View.OnClickListener() {
         @Override
@@ -139,11 +161,9 @@ public class TransactionActivity extends AppCompatActivity {
                 TextView cashTrans = (TextView) findViewById(R.id.cash_transaction);
                 cashTrans.setText("$" + String.format("%.02f", myCash));
 
-                SharedPreferences.Editor peditor = myPrefs.edit();
-                peditor.putFloat("cash", (float) myCash);
-                peditor.commit();
-
-                actions.push(-selection);
+                SharedPreferences.Editor editor = myPrefs.edit();
+                editor.putFloat(getString(R.string.preferences), (float) myCash);
+                editor.commit();
                 //subtract current amount and stuff
             }
             //else shake angrily, etc
@@ -156,11 +176,9 @@ public class TransactionActivity extends AppCompatActivity {
             TextView cashTrans = (TextView) findViewById(R.id.cash_transaction);
             cashTrans.setText("$" + String.format("%.02f", myCash));
 
-            SharedPreferences.Editor peditor = myPrefs.edit();
-            peditor.putFloat("cash", (float) myCash);
-            peditor.commit();
-
-            actions.push(selection);
+            SharedPreferences.Editor editor = myPrefs.edit();
+            editor.putFloat(getString(R.string.preferences), (float) myCash);
+            editor.commit();
             //add current amount and stuff
         }
     };
@@ -169,13 +187,7 @@ public class TransactionActivity extends AppCompatActivity {
         public void onClick(View v) {
             if (!actions.isEmpty()) {
                 double lastAction = actions.pop();
-                myCash -= lastAction;
-                TextView cashTrans = (TextView) findViewById(R.id.cash_transaction);
-                cashTrans.setText("$" + String.format("%.02f", myCash));
-
-                SharedPreferences.Editor editor = myPrefs.edit();
-                editor.putFloat("cash", (float) myCash);
-                editor.commit();
+                updateSelection(-lastAction, true);
             }
 
         }

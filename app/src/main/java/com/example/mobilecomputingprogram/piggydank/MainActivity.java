@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
 
-        if (myPrefs.getFloat("cash", 0) < 0) {
+        if (myPrefs.getFloat(getString(R.string.preferences), 0) < 0) {
             myCash = 0;
 
             SharedPreferences.Editor editor = myPrefs.edit();
-            editor.putFloat("cash", 0);
+            editor.putFloat(getString(R.string.preferences), 0);
             editor.commit();
         }
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        myCash = myPrefs.getFloat("cash", 0);
+        myCash = myPrefs.getFloat(getString(R.string.preferences), 0);
         TextView cashMain = (TextView) findViewById(R.id.cash_main);
         cashMain.setText("$" + String.format("%.02f", myCash));
     }
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        myCash = myPrefs.getFloat("cash", 0);
+        myCash = myPrefs.getFloat(getString(R.string.preferences), 0);
         TextView cashMain = (TextView) findViewById(R.id.cash_main);
         cashMain.setText("$" + String.format("%.02f", myCash));
     }
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
 
         SharedPreferences.Editor editor = myPrefs.edit();
-        editor.putFloat("cash", (float) myCash);
+        editor.putFloat(getString(R.string.preferences), (float) myCash);
         editor.commit();
     }
 
