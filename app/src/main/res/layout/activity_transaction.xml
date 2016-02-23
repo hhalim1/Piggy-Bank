@@ -10,81 +10,83 @@
     tools:context="com.example.mobilecomputingprogram.piggydank.TransactionActivity">
 
     <TextView
-        android:id="@+id/money"
+        android:id="@+id/cash_transaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="current money amoutn program this"
+        android:textSize="40sp"
         android:layout_centerInParent="true"
         />
-    <ImageView
+    <ImageButton
         android:id="@+id/penny_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/penny"
         android:layout_marginTop="@dimen/btn_outer_margin"
-        />
+        android:background="#00ffffff" />
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/nickle_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/nickle"
         android:layout_toRightOf="@id/penny_img"
         android:layout_marginTop="@dimen/btn_outer_margin"
-        />
+        android:background="#00ffffff" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/dime_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/dime"
         android:layout_toRightOf="@id/nickle_img"
         android:layout_marginTop="@dimen/btn_outer_margin"
-        />
+        android:background="#00ffffff" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/quarter_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/quarter"
         android:layout_toRightOf="@id/dime_img"
         android:layout_marginTop="@dimen/btn_outer_margin"
-        />
+        android:background="#00ffffff" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/dollar_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/dollar"
         android:layout_below="@id/penny_img"
-        />
+        android:background="#00ffffff" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/five_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/fiver"
         android:layout_below="@id/penny_img"
-        android:layout_toRightOf="@id/dollar_img"/>
+        android:layout_toRightOf="@id/dollar_img"
+        android:background="#00ffffff" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/ten_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/tenner"
         android:layout_below="@id/penny_img"
         android:layout_toRightOf="@id/five_img"
-        />
+        android:background="#00FFFFFF" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/twenty_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/twenty"
         android:layout_below="@id/penny_img"
         android:layout_toRightOf="@id/ten_img"
-        />
+        android:background="#00ffffff" />
 
     <Button
         android:id="@+id/undo_button"
